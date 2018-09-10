@@ -15,7 +15,7 @@ class SongsController < ApplicationController
 
   post '/songs' do
     # binding.pry
-    @song = Song.new(params[:song][:name])
+    @song = Song.create(name: params[:song][:name])
 
     params[:song][:genre].each do |genre_id|
       genre = Genre.find(genre_id)
