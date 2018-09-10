@@ -25,7 +25,7 @@ class SongsController < ApplicationController
   patch '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
     @song.name = params[:song][:name]
-    @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
+    @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
     @song.genres.clear
 
     params[:genres].each do |genre_id|
