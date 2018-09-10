@@ -13,4 +13,8 @@ class SongsController < ApplicationController
     erb :"/songs/show"
   end
 
+  post '/songs/' do
+    binding.pry
+  end
+
 end
