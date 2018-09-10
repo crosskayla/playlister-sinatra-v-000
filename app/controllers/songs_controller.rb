@@ -16,19 +16,11 @@ class SongsController < ApplicationController
   post '/songs' do
     # binding.pry
     @song = Song.create(name: params[:song][:name])
+    @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
 
     params[:song][:genre].each do |genre_id|
       genre = Genre.find(genre_id)
       song.genres << genre if genre
-    end
-
-    artist = Artist.find_by(name: params[:song][:artist])
-
-    if artist
-      @song.artist = artist
-    else
-      artist = Artist.create(name: params[:song][:artist])
-      @song.artist = artist
     end
 
     @song.save
