@@ -6,7 +6,9 @@ class SongsController < ApplicationController
 
   get '/songs/:id' do
     @song = Song.find(params[:id])
-    erb :"songs/show"
+    if @song
+      erb :"songs/show"
+    end
   end
 
 end
