@@ -14,7 +14,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    binding.pry
+    # binding.pry
     @song = Song.new(params[:song][:name])
 
     params[:song][:genre].each do |genre_id|
