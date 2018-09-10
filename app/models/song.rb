@@ -10,5 +10,5 @@ class Song < ActiveRecord::Base
   def self.find_by_slug(slug)
     self.find_by(name: slug.split('-').join(' ').titleize)
   end
-  
+
 end
