@@ -21,8 +21,8 @@ class SongsController < ApplicationController
     erb :'/songs/edit'
   end
 
-  post '/songs/:id' do
-    
+  post '/songs/:slug' do
+
   end
 
   post '/songs' do
