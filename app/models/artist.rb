@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   has_many :genres, through: :songs
 
   def slug
-    x = self.name.split(' ').join('')
+    x = self.name.split(' ').join('-')
     binding.pry
   end
 
