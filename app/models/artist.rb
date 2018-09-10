@@ -6,5 +6,5 @@ class Artist < ActiveRecord::Base
     x = self.name.split(' ').join('')
     binding.pry
   end
-  
+
 end
