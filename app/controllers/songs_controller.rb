@@ -23,7 +23,7 @@ class SongsController < ApplicationController
       @song.artist = @artist
     else
       @artist = Artist.create(name: params[:song][:artist])
-      Song.create()
+      @song.artist = @artist)
     end
   end
 
