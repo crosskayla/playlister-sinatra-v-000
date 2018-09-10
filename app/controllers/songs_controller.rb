@@ -14,6 +14,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
+    binding.pry
     @song = Song.create(params[:song][:name])
 
     params[:song][:genre].each do |genre_id|
@@ -31,7 +32,7 @@ class SongsController < ApplicationController
     end
 
     @song.save
-    binding.pry
+    
     redirect "/songs/#{@song.slug}"
   end
 
