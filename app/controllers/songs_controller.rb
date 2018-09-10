@@ -25,6 +25,7 @@ class SongsController < ApplicationController
     @song = Song.find_by_slug(params[:slug])
     @song.name = params[:song][:name]
     @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
+    @song.genres.clear
 
     params[:song][:genres].each do |genre_id|
       genre = Genre.find(genre_id)
