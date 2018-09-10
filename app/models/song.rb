@@ -1,8 +1,4 @@
-require 'rack-flash'
-
 class Song < ActiveRecord::Base
-  use Rack::Flash
-  
   belongs_to :artist
   has_many :song_genres
   has_many :genres, through: :song_genres
