@@ -9,7 +9,6 @@ class Song < ActiveRecord::Base
 
   def self.find_by_slug(slug)
     self.all.find {|song| song.slug == slug}
-    binding.pry
   end
 
 end
