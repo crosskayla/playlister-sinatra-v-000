@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 
     params[:song][:genres].each do |genre_id|
       genre = Genre.find(genre_id)
-      song.genres << genre if genre
+      @song.genres << genre if genre
     end
 
     @song.save
