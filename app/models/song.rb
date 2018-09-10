@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   end
 
   def self.find_by_slug(slug)
-    self.find_by(name: slug.split('-').join(' ').titleize)
+    self.all.find {|song| song.slug == slug}
     binding.pry
   end
 
