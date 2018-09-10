@@ -1,4 +1,5 @@
 require 'rack-flash'
+
 class SongsController < ApplicationController
   use Rack::Flash
 
@@ -25,7 +26,7 @@ class SongsController < ApplicationController
       @song.genres << genre if genre
     end
     @song.save
-    
+
     flash[:message] = "Successfully created song."
     redirect ("/songs/#{@song.slug}")
 
