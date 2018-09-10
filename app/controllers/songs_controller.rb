@@ -27,12 +27,11 @@ class SongsController < ApplicationController
       @song.artist = @artist
     else
       @artist = Artist.create(name: params[:song][:artist])
-      @song.artist = @artist)
+      @song.artist = @artist
     end
 
     @song.save
     redirect "/songs/#{@song.slug}"
-
   end
 
 end
