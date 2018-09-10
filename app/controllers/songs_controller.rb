@@ -27,7 +27,7 @@ class SongsController < ApplicationController
     @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
     @song.genres.clear
 
-    params[:song][:genres].each do |genre_id|
+    params[:genres].each do |genre_id|
       genre = Genre.find(genre_id)
       @song.genres << genre if genre
     end
