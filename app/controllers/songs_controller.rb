@@ -21,13 +21,13 @@ class SongsController < ApplicationController
       song.genres << genre if genre
     end
 
-    @artist = Artist.find_by(name: params[:song][:artist])
+    artist = Artist.find_by(name: params[:song][:artist])
 
-    if @artist
-      @song.artist = @artist
+    if artist
+      @song.artist = artist
     else
-      @artist = Artist.create(name: params[:song][:artist])
-      @song.artist = @artist
+      artist = Artist.create(name: params[:song][:artist])
+      @song.artist = artist
     end
 
     @song.save
